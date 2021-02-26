@@ -1,0 +1,20 @@
+class Person():
+    def __init__(self, name):
+        self._name = name
+    
+    def get_name(self):
+        return self._name
+    
+    def set_name(self, new_name):
+        if len(new_name) >= 5:
+            self._name=new_name
+        else:
+            print('Error : Please input at least 5 letters')
+
+x = Person('atguigu')
+print('name is :', x.get_name()) #呼叫方法, 方法就會將私有屬性傳出
+p = Person('abc')
+p.set_name('wanger')
+print(p.get_name())
+p.set_name('liu')
+print(p.get_name())
