@@ -1,0 +1,40 @@
+class Bank():
+    
+    def __init__(self, name):
+        self.__name = name
+        self.__balance = 0
+        self.__bank_name = 'Taipei Bank'
+        
+    def bank_deposit(self, num):
+        
+        if num <= 0:
+            print('Invalid amount! Please try again!')
+        
+        else:
+            self.__balance += num
+            return "{} has deposited {} dollars at {}".format(self.__name, num, self.__bank_name)
+    
+    def bank_balance(self, num):
+        
+        return "{} 's current balance is {}".format(self.__name, self.__balance)
+    
+while True:
+    
+    b = Bank(input('Please input your name : '))
+    print(b.bank_deposit(int(input('Please input deposit amount : '))))
+    print(b.bank_balance(b.bank_balance))    
+
+    continue_ = input('Would you like to deposit another transaction?  Yes / No  ')
+    
+    if continue_ == "yes":
+        
+        b = Bank(input('Please input your name : '))
+        print(b.bank_deposit(int(input('Please input deposit amount : '))))
+        print(b.bank_balance(b.bank_balance))
+        continue
+    
+    elif continue_ =="no":
+        print('Thank you for using Taipei Bank ATM!!')
+        break
+        
+    
